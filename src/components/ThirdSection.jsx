@@ -6,36 +6,49 @@ export default function ThirdSection() {
   return (
     <AnimatedScrollingFade
       className={
-        'flex flex-col items-center justify-center gap-2 p-4 sm:h-[100vh] sm:flex-row'
+        'flex flex-col items-center justify-center gap-2 p-4 sm:flex-row'
       }
     >
-      <div className="glass flex h-[100%] flex-col items-center justify-center gap-8 p-4 sm:w-[90%]">
-        <Title title="Meu trabalho." color="#E59251" />
-        <div className="text-[19.2px]">
-          Aqui no consultório, entendo as lutas diárias enfrentadas por aqueles
-          que vivem com{' '}
-          <b className="underline">dores que parecem nunca dar trégua</b>, seja
-          nas articulações, na coluna ou por todo o corpo. Sei como é começar o
-          dia já lutando contra a rigidez e carregar o peso do cansaço que não
-          desaparece, mesmo após um descanso adequado.
-        </div>
-        <div className="text-[19.2px]">
-          Meu compromisso é{' '}
-          <b className="underline">ir além do alívio temporário</b>, mergulhando
-          fundo para encontrar e combater a raiz de seu desconforto. Com
-          empatia, escuta ativa e tratamentos baseados em evidências, me dedico
-          a oferecer soluções eficazes que permitem a você retomar as rédeas da
-          sua vida, reduzindo significativamente a dor e as limitações impostas
-          por essas condições.
+      <div className="glass flex flex-col items-center justify-center gap-8 p-4 sm:w-[100%]">
+        <Title title="Meu Trabalho" />
+        <div className="flex flex-col gap-4 text-[19.2px]">
+          <p>
+            Dr. André Gama é fisioterapeuta especialista em ortopedia,
+            acupuntura, fitoterapia, naturopatia, RPG e manipulação articular,
+            com mais de 30 anos de experiência ajudando pessoas a melhorar sua
+            qualidade de vida, reduzindo dores e combatendo o estresse. Atuando
+            em consultórios, clínicas, hospitais, SPRs e na internet. Criador da
+            <b> Massagem Expressa de Combate ao Estresse (MECS),</b> onde são
+            utiliza técnicas comprovadas para reduzir as tensões
+            musculoesqueléticas, promovendo o bem-estar de maneira acessível e
+            prática.
+          </p>
+          <p>
+            A <b>MECS</b> é uma iniciativa do <b>Tour no Stress®</b> , projeto
+            que oferece práticas corporais para gestão do estresse. Dr. André
+            também é responsável pela <b> E²T - Eco Ergo Treat®</b>, que
+            desenvolve equipamentos ergonômicos para melhorar a performance e
+            reduzir distresse dos pacientes e profissionais com ou sem
+            deficiências. É autor do <b>Planejalismo®</b> , um sistema de
+            gestão/administração focado na redução do estresse laboral,
+            organizacional e sócio-político, e do <b>Consciêncialismo</b> , uma
+            forma de equacionamento de conhecimentos que evita o distresse por
+            divergências de interpretações da realidade.
+          </p>
+          <p>
+            Seu compromisso é oferecer soluções terapêuticas inovadoras e
+            eficazes, combinando abordagens naturais e tecnológicas para
+            proporcionar mais saúde e qualidade de vida.
+          </p>
         </div>
       </div>
-      <div className="flex items-center justify-center">
+      {/*   <div className="flex items-center justify-center">
         <img
-          src="./assets/dr.jpg"
-          className="h-full w-full rounded-br-full rounded-tl-full"
+          src="./assets/IMG_7411.JPG"
+          className="h-full w-[100%] rounded-br-full rounded-tl-full"
           alt=""
         />
-      </div>
+      </div> */}
     </AnimatedScrollingFade>
   )
 }

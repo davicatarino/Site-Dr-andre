@@ -5,10 +5,11 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "export": "next export"
   },
   "dependencies": {
-    "@headlessui/react": "^2.1.2",
+    "@headlessui/react": "^2.1.9",
     "@heroicons/react": "^2.1.5",
     "@rocketseat/eslint-config": "^2.2.2",
     "framer-motion": "^11.3.17",

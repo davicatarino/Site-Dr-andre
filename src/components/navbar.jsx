@@ -5,16 +5,13 @@ import {
   DisclosurePanel,
 } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import { useState, useEffect } from 'react'
-import useScrollDirection from './../components/subs/scrollDirection' // importe o hook personalizado
+import { useState } from 'react'
 
 const navigation = [
-  { name: 'Home', href: '#home', current: true },
-  { name: 'Trabalho', href: '#trabalho', current: true },
-  { name: 'Tratamentos', href: '#tratamento', current: true },
-  { name: 'Quem sou', href: '#quem', current: true },
-  { name: 'MECs', href: '#mecs', current: true },
-  { name: 'FAQ', href: '#FAQ', current: true },
+  { name: 'Home', href: '/', current: true },
+  { name: 'Trabalho', href: '/#trabalho', current: true },
+  { name: 'MECs', href: '/#mecs', current: true },
+  { name: 'Teste de Estresse', href: '/stressTest.html', current: true },
 ]
 
 function classNames(...classes) {
@@ -22,38 +19,47 @@ function classNames(...classes) {
 }
 
 export default function NavBar() {
-  const [isNavbarFixed, setIsNavbarFixed] = useState(false)
-  const scrollDirection = useScrollDirection()
+  const [showTopBanner, setShowTopBanner] = useState(true)
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsNavbarFixed(window.scrollY > 0)
-    }
-    window.addEventListener('scroll', handleScroll)
-
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  // Função para fechar o banner quando o X for clicado
+  const handleCloseBanner = () => {
+    setShowTopBanner(false)
+  }
 
   return (
     <Disclosure
       as="nav"
-      className={`left-0 top-0 z-50 w-full bg-[#cacdf7] px-2 transition duration-300 ease-in-out sm:fixed sm:px-6 lg:px-8 ${isNavbarFixed ? 'shadow-md' : ''} ${scrollDirection === 'down' ? '-translate-y-full' : 'translate-y-0'}`}
+      className="left-0 top-0 z-50 w-full bg-[#d4d8fa] shadow-md"
     >
+      {/* Elemento do topo que será escondido ao clicar no X */}
+      {showTopBanner && (
+        <div className="gradient 1 relative isolate z-10 flex w-full items-center justify-center gap-x-6 overflow-hidden py-2.5">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+            <p className="text-sm leading-6 text-gray-900">
+              Este site se destina a divulgação da MECS.
+            </p>
+          </div>
+          <div className="static left-0 flex justify-end sm:relative sm:left-[30rem]">
+            <button
+              type="button"
+              className="p-3 focus-visible:outline-offset-[-4px]"
+              onClick={handleCloseBanner} // Fecha o banner ao clicar no X
+            >
+              <span className="sr-only">Dismiss</span>
+              <XMarkIcon aria-hidden="true" className="h-5 w-5 text-gray-900" />
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Navbar principal */}
       <div className="mx-auto max-w-7xl">
         <div className="relative flex h-16 items-center justify-center">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
             {/* Mobile menu button */}
             <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-              <span className="absolute -inset-0.5" />
-              <span className="sr-only">Open main menu</span>
-              <Bars3Icon
-                aria-hidden="true"
-                className="block h-6 w-6 group-data-[open]:hidden"
-              />
-              <XMarkIcon
-                aria-hidden="true"
-                className="hidden h-6 w-6 group-data-[open]:block"
-              />
+              <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
+              <XMarkIcon className="hidden h-6 w-6" aria-hidden="true" />
             </DisclosureButton>
           </div>
           <div className="flex flex-1 items-center justify-center sm:items-stretch">
@@ -76,7 +82,13 @@ export default function NavBar() {
             </div>
           </div>
           <div>
-            <button className="btn-agend">agende agora</button>
+            <a
+              href="https://youtube.com/live/v1l1TtIJKI8?feature=share"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="btn-agend">Conheça a MECS!</button>
+            </a>
           </div>
         </div>
       </div>

@@ -141,6 +141,7 @@ a {
     width: 100%;
   }
 }
+
 .btn-agend3 {
   font-family: "Montserrat", Sans-serif;
   font-size: 18px;
@@ -177,7 +178,7 @@ a {
 }
 
 .custom-shape-divider-bottom-1721656622 .shape-fill {
-  fill: #E59251;
+  fill: #e5915100;
 }
 
 /** For mobile devices **/
@@ -191,27 +192,29 @@ a {
 
 /* From https://css.glass */
 .glass {
-  background: rgba(212, 216, 250, 0.40);
-  margin: 15px;
-  border-radius: 10px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(8.1px);
-  -webkit-backdrop-filter: blur(8.1px);
-
+  border-radius: 16px;
+ /* From https://css.glass */
+/* From https://css.glass */
+background: rgba(212, 216, 250, 0.4);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.288);
+backdrop-filter: blur(0.8px);
+-webkit-backdrop-filter: blur(0.8px);
 }
 
 .glass2 {
-  background: rgba(212, 216, 250, 0.40);
-  margin: 15px;
-  border-radius: 10px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(8.1px);
-  -webkit-backdrop-filter: blur(8.1px);
+  background: rgba(212, 216, 250, 0.671);
 
+  border-radius: 10px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.288);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+color: #E59251;
 }
 
 .glass2:hover {
   background: rgba(229, 146, 81, 0.40);
+  color: #000;
 }
 
 .card {
@@ -383,4 +386,9 @@ ul {
 .example-2 .icon-content a[data-social="youtube"] .filled,
 .example-2 .icon-content a[data-social="youtube"]~.tooltip {
   background-color: #ff0000;
+}
+
+.gradient{
+  background: rgb(212,216,250);
+  background: linear-gradient(0deg, rgba(212,216,250,1) 5%, rgba(229,146,81,1) 26%);
 }
